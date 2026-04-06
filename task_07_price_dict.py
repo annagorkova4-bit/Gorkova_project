@@ -14,7 +14,7 @@ materials ={
 """Добавляем два элемента в словарь"""
 materials["Гипс"] = 3600
 materials["Керамзитоблок"] =6600
-print("Словарь после добавления материалов")
+print("\nСловарь после добавления материалов")
 for material, price in materials.items():
     print(f" {material}: {price}, руб.")
 
@@ -22,4 +22,16 @@ for material, price in materials.items():
 old_price = materials["Кирпич"]
 new_price = int(old_price * 1.10)
 materials["Кирпич"] = new_price
-print("Новая стоимость кирпича: ", new_price)
+print("\nНовая стоимость кирпича: ", new_price)
+
+"""Удаляем один материал"""
+materials.pop("Металл")
+
+"""Рассчитаваем среднюю цену"""
+average_price = sum(materials.values()) / len(materials)
+print("\nСредняя цена всех материалов", round(average_price, 2), "руб.")
+
+"""Выводим итоговый словарь"""
+print("\nИтоговый словарь материалов")
+for material, price in materials.items():
+    print(f" {material}: {price}, руб.")
