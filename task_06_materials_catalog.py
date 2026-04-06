@@ -11,3 +11,8 @@ print("Средние элементы материал в списке: ", mate
 
 materials.append("Гипс")
 materials.append("Керамзитоблок")
+
+materials.pop(1)
+
+print("Итоговый список материалов: ", materials)
+print("Количество элементов в списке", len(materials))
