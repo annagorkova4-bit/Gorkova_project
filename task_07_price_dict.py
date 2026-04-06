@@ -10,3 +10,9 @@ materials ={
     "Металл": 18000,
     "Газобетон": 6500
 }
+
+materials["Гипс"] = 3600
+materials["Керамзитоблок"] =6600
+print("Словарь после добавления материалов")
+for material, price in materials.items():
+    print(f" {material}: {price}, руб.")
