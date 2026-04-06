@@ -11,8 +11,15 @@ materials ={
     "Газобетон": 6500
 }
 
+"""Добавляем два элемента в словарь"""
 materials["Гипс"] = 3600
 materials["Керамзитоблок"] =6600
 print("Словарь после добавления материалов")
 for material, price in materials.items():
     print(f" {material}: {price}, руб.")
+
+"""Изменим цену Кирпича на 10%"""
+old_price = materials["Кирпич"]
+new_price = int(old_price * 1.10)
+materials["Кирпич"] = new_price
+print("Новая стоимость кирпича: ", new_price)
