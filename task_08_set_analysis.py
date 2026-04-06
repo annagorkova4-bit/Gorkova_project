@@ -16,4 +16,8 @@ set_3 = set(list_3)
 only_set_1 = set_1 - set_2 - set_3
 only_set_2 = set_2 - set_1 - set_3
 only_set_3 = set_3 - set_2 - set_1
-print(only_set_1 | only_set_2 | only_set_3)
+print("Уникальные элементы:", only_set_1 | only_set_2 | only_set_3)
+
+"""Найдем общие элементы для всех трех множеств"""
+print("Общие элементы:", set_1 & set_2 & set_3)
+
