@@ -33,3 +33,15 @@ for name, props in warehouse.items():
 
 print("=" * 100)
 print(f"ОБЩАЯ СТОИМОСТЬ: {total_cost:.2f} руб")
+
+"""Определим самый дорогой материал"""
+max_cost = 0
+max_name = None
+for name, props in warehouse.items():
+    quantity = props["quantity"]
+    price = props["price"]
+    cost = quantity * price
+    if cost > max_cost:
+        max_cost = cost
+        max_name = name
+print(f"\nСамый дорогой: {max_name} ({max_cost:.2f} руб)")
