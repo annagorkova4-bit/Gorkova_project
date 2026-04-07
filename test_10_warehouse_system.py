@@ -56,3 +56,20 @@ for name, props in warehouse.items():
 print(f"\nКРИТИЧЕСКИЕ ОСТАТКИ ({len(critical)}):")
 for name, quantity, min_quantity in critical:
     print(f"- {name}: {quantity} < {min_quantity}")
+
+"""Смоделируем выдачу со склада"""
+print("=== ВЫДАЧА МАТЕРИАЛА ===")
+target_material = "Цемент"
+sum_quantity = 25
+if target_material not in warehouse:
+    print(f"Ошибка: материал '{target_material}' не найден на складе.")
+else:
+    current_quantity = warehouse[target_material]["quantity"]
+    if current_quantity < sum_quantity:
+        print(f"ОШИБКА: недостаточно материала '{target_material}'. Доступно: {current_quantity}")
+    else:
+        warehouse[target_material]["quantity"] = current_quantity - sum_quantity
+        print(f"Выдано {sum_quantity} единиц '{target_material}'")
+        print(f"Остаток: {current_quantity} → {warehouse[target_material]['quantity']}")
+
+
