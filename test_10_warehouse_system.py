@@ -45,3 +45,14 @@ for name, props in warehouse.items():
         max_cost = cost
         max_name = name
 print(f"\nСамый дорогой: {max_name} ({max_cost:.2f} руб)")
+
+"""Определяем список критических остатков"""
+critical = []
+for name, props in warehouse.items():
+    quantity = props["quantity"]
+    min_quantity = props["min_quantity"]
+    if quantity < min_quantity:
+        critical.append((name, quantity, min_quantity))
+print(f"\nКРИТИЧЕСКИЕ ОСТАТКИ ({len(critical)}):")
+for name, quantity, min_quantity in critical:
+    print(f"- {name}: {quantity} < {min_quantity}")
